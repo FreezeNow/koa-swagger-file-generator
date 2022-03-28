@@ -12,7 +12,7 @@ npm i koa-swagger-generator --save-dev
 const Koa = require('koa');
 const app = new Koa();
 
-const koaSwagger = require('koa-swagger-generator')(app);
+const koaSwagger = require('koa-swagger-generator').swaggerServe(app);
 
 let options = {
     swaggerDefinition: {
@@ -38,7 +38,11 @@ let options = {
         }
     },
     basedir: __dirname, //app absolute path
-    files: ['./routes/**/*.js'] //Path to the API handle folder
+    files: ['./routes/**/*.js'], //Path to the API handle folder
+    output: {
+        type: 'json',
+        name: 'swagger',
+    }, //Output swagger api file config
 };
 koaSwagger(options)
 app.listen(3000);
