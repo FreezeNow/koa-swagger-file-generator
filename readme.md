@@ -44,6 +44,8 @@ let options = {
         name: 'swagger',
     }, //Output swagger api file config
 };
+const { generateSwaggerFile } = require('koa-swagger-generator');
+generateSwaggerFile(swaggerConfig);
 koaSwagger(options)
 app.listen(3000);
 ```
