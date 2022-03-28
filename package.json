@@ -1,6 +1,6 @@
 {
-  "name": "koa-swagger-generator",
-  "version": "0.0.7",
+  "name": "koa-swagger-file-generator",
+  "version": "0.0.1",
   "description": "一个koa-swagger-generator的分支，添加生成swagger文件功能",
   "main": "index.js",
   "directories": {
