@@ -28,12 +28,14 @@ const swaggerConfig = {
   files: ['*.js'],
 };
 
+// 模块
 /**
- * This function comment is parsed by doctrine
- * @route GET /hi
- * @group foo - Operations about user
- * @returns {string} 200 - Hello World
- * @returns {Error}  default - Unexpected error
+ * 获取样品模块列表
+ * @route GET /module/list
+ * @group module - Operations about user
+ * @param {string} [pageNo.query.required=1] - now
+ * @param {string} pageSize.query.required - 分页大小
+ * @returns {string} 200 - 操作成功
  */
 router.get('/hi', async (ctx) => {
   ctx.body = 'Hello World';

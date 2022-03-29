@@ -4,3 +4,5 @@ dist/
 npm-debug.log
 .idea
 *.iml
+output.*
+package-lock.json

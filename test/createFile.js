@@ -19,10 +19,10 @@ const swaggerConfig = {
     },
   },
   basedir: __dirname, //app absolute path
-  files: ['*.js'],
+  files: ['index.js'],
   output: {
     type: 'json',
-    name: 'swagger',
+    name: 'output',
   },
 };
 const { generateSwaggerFile } = require('../lib/swagger');
