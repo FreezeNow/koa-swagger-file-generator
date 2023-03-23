@@ -3,7 +3,7 @@
 #### Installation
 
 ```
-npm i koa-swagger-generator --save-dev
+npm i koa-swagger-file-generator --save-dev
 ```
 
 #### Usage
@@ -12,7 +12,7 @@ npm i koa-swagger-generator --save-dev
 const Koa = require('koa');
 const app = new Koa();
 
-const koaSwagger = require('koa-swagger-generator').swaggerServe(app);
+const koaSwagger = require('koa-swagger-file-generator').swaggerServe(app);
 
 let options = {
     swaggerDefinition: {
@@ -44,7 +44,7 @@ let options = {
         name: 'swagger',
     }, //Output swagger api file config
 };
-const { generateSwaggerFile } = require('koa-swagger-generator');
+const { generateSwaggerFile } = require('koa-swagger-file-generator');
 generateSwaggerFile(swaggerConfig);
 koaSwagger(options)
 app.listen(3000);
@@ -119,4 +119,4 @@ For model definitions:
 
 #### More
 
-This module is based on [express-swagger-generator](https://github.com/pgroot/express-swagger-generator),  [express-swaggerize-ui](https://github.com/pgroot/express-swaggerize-ui) and [Doctrine-File](https://github.com/researchgate/doctrine-file)
+This module is based on [koa-swagger-generator](https://github.com/arizorin/koa-swagger-generator),   [express-swagger-generator](https://github.com/pgroot/express-swagger-generator),  [express-swaggerize-ui](https://github.com/pgroot/express-swaggerize-ui) and [Doctrine-File](https://github.com/researchgate/doctrine-file)
