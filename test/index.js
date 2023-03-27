@@ -26,12 +26,18 @@ const swaggerConfig = {
   },
   basedir: __dirname, //app absolute path
   files: ['*.js'],
+  output: {
+    type: 'yaml',
+    name: 'swagger',
+  }, //Output swagger api file config
 };
 
 // 模块
 /**
- * 获取样品模块列表
+ * 
+ * 获取模块列表
  * @route GET /module/list
+ * @summary dasdasd
  * @group module - Operations about user
  * @param {string} [pageNo.query.required=1] - now
  * @param {string} pageSize.query.required - 分页大小
@@ -41,7 +47,9 @@ router.get('/hi', async (ctx) => {
   ctx.body = 'Hello World';
 });
 
-const koaSwagger = require('../index').generateSpecAndMount(app);
+const { swaggerServe, generateSwaggerFile } = require('../index');
+const koaSwagger = swaggerServe(app);
+generateSwaggerFile(swaggerConfig);
 koaSwagger(swaggerConfig);
 app.use(router.routes());
 app.listen(3000);
